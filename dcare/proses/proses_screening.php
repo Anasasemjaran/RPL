@@ -53,7 +53,7 @@ if (isset($_POST['submit_screening'])) {
 
     if (mysqli_query($conn, $sql)) {
         // Jika berhasil, arahkan (redirect) ke halaman hasil analisis dan kirim data skor
-        header("Location: ../index.php?page=hasil_analisis&skor=$skor&status=$status_risiko");
+        header("Location: ../index.php?page=hasilAnalisis&skor=$skor&status=$status_risiko");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
