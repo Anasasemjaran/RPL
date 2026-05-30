@@ -1,6 +1,4 @@
 <script>
-        /* =============== JAVASCRIPT LOGIC =============== */
-        
         // Custom Message Box Logic
         function showMessageBox(message) {
             const modal = document.getElementById('custom-message-box');
@@ -84,7 +82,7 @@
                 target.classList.remove('hidden');
                 target.classList.add('flex');
             }
-
+            window.history.pushState(null, null, "?page=" + viewId);
             // Update Background color based on view
             const body = document.getElementById('app-body');
             
@@ -101,8 +99,16 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Jalankan halaman Home (Edukasi) sebagai default saat pertama dimuat
+        // Jalankan halaman sesuai parameter URL, atau Home sebagai default
         document.addEventListener('DOMContentLoaded', () => {
-            navigateTo('home');
+            // Ambil parameter '?page=' dari URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const page = urlParams.get('page');
+
+            if (page) {
+                navigateTo(page); // Buka halaman sesuai instruksi PHP
+            } else {
+                navigateTo('home'); // Buka home jika URL bersih (baru pertama buka)
+            }
         });
     </script>
