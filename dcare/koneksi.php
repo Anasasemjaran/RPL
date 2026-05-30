@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = ""; 
-$db   = "dcare_db"; 
+$db   = "diabetes"; 
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
