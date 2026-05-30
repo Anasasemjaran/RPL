@@ -12,6 +12,7 @@
         
         <?php 
             // Memanggil semua view section secara modular
+            include 'koneksi.php';
             include 'views_user/home.php'; 
             include 'views_user/login.php'; 
             include 'views_user/signup.php'; 
